@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private float deathMenuAppearTime = 1f;
+    private float deathMenuAppearTime = 0f;
 
     public Transform DeathMenuCanvas;
     public IsDead isDead;

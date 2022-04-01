@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MoasScene.unity
+    guid: ec45f5b5f069c374ca63637e1910e8c0
   m_configObjects: {}

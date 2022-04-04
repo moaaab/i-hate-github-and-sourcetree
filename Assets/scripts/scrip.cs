@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class scrip : MonoBehaviour
 {
+    public float cameraSpeed = 0.1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +15,6 @@ public class scrip : MonoBehaviour
     void Update()
     {
         //Automatic movement forward
-        gameObject.transform.position += Vector3.forward * 0.1f;
+        gameObject.transform.position += Vector3.forward * cameraSpeed;
     }
 }

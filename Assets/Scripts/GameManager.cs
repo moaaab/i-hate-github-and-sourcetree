@@ -7,12 +7,11 @@ public class GameManager : MonoBehaviour
     private float deathMenuAppearTime = 0f;
 
     public Transform DeathMenuCanvas;
-    public IsDead isDead;
-
+    public Lives lives;
 
     void Update()
     {
-        if (isDead.died == true)
+        if (lives.nrOfLives == 0)
         {
             StartCoroutine(DeathMenu());
         }

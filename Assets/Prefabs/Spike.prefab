@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7252555132849349546}
   - component: {fileID: 1425513793395090083}
   - component: {fileID: 6613745626584080635}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -269,7 +269,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 4d1c73012626bba4d9544281f33047e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

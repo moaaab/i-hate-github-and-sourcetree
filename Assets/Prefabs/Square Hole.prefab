@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8956257297264756321}
   - component: {fileID: 8562152549881834599}
   - component: {fileID: 7251489849538797858}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52fa6ab16f5c9cf4cabd33833a109dd2, type: 2}
+  - {fileID: 2100000, guid: 4d1c73012626bba4d9544281f33047e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 8773450053732651149}
   - component: {fileID: 5166398150957718533}
   - component: {fileID: 2978923237703100153}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 52fa6ab16f5c9cf4cabd33833a109dd2, type: 2}
+  - {fileID: 2100000, guid: 4d1c73012626bba4d9544281f33047e9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7712749744394399773}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Square Hole
   m_TagString: Untagged
   m_Icon: {fileID: 0}

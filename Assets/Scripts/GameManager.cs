@@ -29,25 +29,19 @@ public class GameManager : MonoBehaviour
         {
             if (checkpoint.checkPoint == 0)
             {
-                Time.timeScale = 0;
                 player.transform.position = checkpoint0;
-                StartCoroutine(Pause());
                 died.died = false;
             }
 
             if (checkpoint.checkPoint == 1)
             {
-                Time.timeScale = 0;
                 player.transform.position = checkpoint1;
-                StartCoroutine(Pause());
                 died.died = false;
             }
 
             if (checkpoint.checkPoint == 2)
             {
-                Time.timeScale = 0;
                 player.transform.position = checkpoint2;
-                StartCoroutine(Pause());
                 died.died = false;
             }
         }

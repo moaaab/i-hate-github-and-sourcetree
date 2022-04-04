@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Danger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Lives lives;
+    public IsDead died;
+    private void OnCollisionEnter(Collision collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        lives.LoseLife();
+        died.died = true;
     }
 }

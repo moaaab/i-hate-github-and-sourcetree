@@ -5,9 +5,10 @@ using UnityEngine;
 public class Danger : MonoBehaviour
 {
     public Lives lives;
+    public IsDead died;
     private void OnCollisionEnter(Collision collision)
     {
         lives.LoseLife();
-        Destroy(gameObject);
+        died.died = true;
     }
 }

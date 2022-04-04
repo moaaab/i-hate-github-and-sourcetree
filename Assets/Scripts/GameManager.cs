@@ -52,10 +52,4 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(deathMenuAppearTime);
         DeathMenuCanvas.gameObject.SetActive(true);
     }
-
-    IEnumerator Pause()
-    {
-        yield return new WaitForSeconds(1);
-        Time.timeScale = 1;
-    }
 }

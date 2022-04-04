@@ -14,9 +14,9 @@ public class GameManager : MonoBehaviour
 
     Vector3 checkpoint0 = new Vector3(0, 1, 0);
 
-    Vector3 checkpoint1 = new Vector3(0, 1, 10);
+    Vector3 checkpoint1 = new Vector3(0, 1, 105);
 
-    Vector3 checkpoint2 = new Vector3(0, 1, 20);
+    Vector3 checkpoint2 = new Vector3(0, 1, 210);
 
     private void Update()
     {

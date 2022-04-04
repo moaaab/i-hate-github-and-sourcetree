@@ -502,6 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b424ce180781b3438dfdf66a4fe772b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraSpeed: 10
 --- !u!1 &1758791100
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGravity: 30
-  playerFVelocity: 0.1
+  playerFVelocity: 10
   playerGravityState: 1
   rb: {fileID: 0}
 --- !u!65 &1758791102

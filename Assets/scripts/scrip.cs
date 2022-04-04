@@ -15,6 +15,6 @@ public class scrip : MonoBehaviour
     void Update()
     {
         //Automatic movement forward
-        gameObject.transform.position += Vector3.forward * cameraSpeed;
+        gameObject.transform.position += Vector3.forward * Time.deltaTime * cameraSpeed;
     }
 }

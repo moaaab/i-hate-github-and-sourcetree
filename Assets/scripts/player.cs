@@ -54,7 +54,7 @@ public class player : MonoBehaviour
             playerGravityState = false;
         }
         //Automatic movement forward
-        gameObject.transform.position += Vector3.forward * playerFVelocity;
+        gameObject.transform.position += Vector3.forward * Time.deltaTime * playerFVelocity;
     }
 
     private void FixedUpdate()

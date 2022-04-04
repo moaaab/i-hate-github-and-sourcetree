@@ -3483,7 +3483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGravity: 80
-  playerFVelocity: 0.05
+  playerFVelocity: 5
   playerGravityState: 1
   rb: {fileID: 1536489330}
 --- !u!65 &1536489326
@@ -4835,7 +4835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b424ce180781b3438dfdf66a4fe772b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraSpeed: 0.05
+  cameraSpeed: 5
 --- !u!1001 &2075389498
 PrefabInstance:
   m_ObjectHideFlags: 0

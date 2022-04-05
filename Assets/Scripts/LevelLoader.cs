@@ -11,7 +11,7 @@ public class LevelLoader : MonoBehaviour
 
     public void StartGame()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        StartCoroutine(LoadLevel(1));
     }
 
     public void QuitGame()
@@ -22,13 +22,12 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Restart()
     {
-        Debug.Log("click");
-        StartCoroutine(LoadLevel(0));
-        DeathMenuCanvas.gameObject.SetActive(false);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

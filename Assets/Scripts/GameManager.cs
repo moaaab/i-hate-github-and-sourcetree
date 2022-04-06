@@ -45,12 +45,14 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        if (lives.nrOfLives < 1)
+
+        if (died.died)
         {
-            SceneManager.LoadScene(0);
+            Time.timeScale = 0;
+            Reset();
         }
 
-        else if (died.died)
+        else if (lives.nrOfLives < 1)
         {
             StartCoroutine(DeathMenu());
             /* if (checkpoint.checkPoint == 0)
@@ -101,6 +103,11 @@ public class GameManager : MonoBehaviour
         {
             audioThree.Play();
         }
+        died.died = false;
+    }
 
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

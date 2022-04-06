@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
     public IsDead died;
     public Transform theCamera;
     public backgroundrotate background;
+    public AudioSource audioOne;
+    public AudioSource audioTwo;
+    public AudioSource audioThree;
 
     Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
@@ -42,14 +45,12 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-
-        if (died.died)
+        if (lives.nrOfLives < 1)
         {
-            Time.timeScale = 0;
-            Reset();
+            SceneManager.LoadScene(0);
         }
 
-        else if (lives.nrOfLives < 1)
+        else if (died.died)
         {
             StartCoroutine(DeathMenu());
             /* if (checkpoint.checkPoint == 0)
@@ -92,12 +93,14 @@ public class GameManager : MonoBehaviour
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
         background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
-        died.died = false;
+        if (lives.nrOfLives == 2)
+        {
+            audioTwo.Play();
+        }
+        if (lives.nrOfLives == 1)
+        {
+            audioThree.Play();
+        }
 
-    }
-
-    public void GoToMenu()
-    {
-        SceneManager.LoadScene(0);
     }
 }

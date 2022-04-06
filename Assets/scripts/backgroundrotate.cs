@@ -9,7 +9,7 @@ public class backgroundrotate : MonoBehaviour
 
     void Start()
     {
-       
+
     }
 
     // Update is called once per frame

@@ -7,12 +7,9 @@ public class Danger : MonoBehaviour
     public Lives lives;
     public IsDead died;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (other.CompareTag("Obstacles"))
-        {
-            lives.LoseLife();
-            died.died = true;
-        }
+        lives.LoseLife();
+        died.died = true;
     }
 }

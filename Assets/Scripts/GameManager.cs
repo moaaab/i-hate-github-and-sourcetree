@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
     public Lives lives;
     public IsDead died;
     public Transform theCamera;
+    public backgroundrotate background;
 
-    Vector3 startPos = new Vector3(2.5f, 2.4f, -1.05f);
+    Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
 
     Vector3 playerVelocity = new Vector3(0, 0, 0);
@@ -37,7 +38,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("space"))
+        if (Input.GetKeyDown("space") && !died.died)
         {
             Time.timeScale = 1;
         }
@@ -48,9 +49,7 @@ public class GameManager : MonoBehaviour
 
         else if (died.died)
         {
-            died.died = false;
             StartCoroutine(DeathMenu());
-            Time.timeScale = 0;
             /* if (checkpoint.checkPoint == 0)
              {
                  player.transform.position = checkpoint0;
@@ -89,6 +88,8 @@ public class GameManager : MonoBehaviour
         theCamera.transform.position = cameraStartPos;
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
-        Time.timeScale = 1;
+        died.died = false;
+        background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
+
     }
 }

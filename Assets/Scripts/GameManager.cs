@@ -79,6 +79,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(deathMenuAppearTime);
         DeathMenuCanvas.gameObject.SetActive(true);
         Time.timeScale = 0;
+        died.died = false;
     }
 
 
@@ -88,7 +89,6 @@ public class GameManager : MonoBehaviour
         theCamera.transform.position = cameraStartPos;
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
-        died.died = false;
         background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
 
     }

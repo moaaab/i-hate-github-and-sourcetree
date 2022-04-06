@@ -42,12 +42,14 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 1;
         }
-        if (lives.nrOfLives < 1)
+
+        if (died.died)
         {
-            SceneManager.LoadScene(0);
+            Time.timeScale = 0;
+            Reset();
         }
 
-        else if (died.died)
+        else if (lives.nrOfLives < 1)
         {
             StartCoroutine(DeathMenu());
             /* if (checkpoint.checkPoint == 0)
@@ -90,6 +92,12 @@ public class GameManager : MonoBehaviour
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
         background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
+        died.died = false;
 
+    }
+
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

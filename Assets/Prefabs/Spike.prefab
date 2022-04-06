@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4763915030406704264}
   - component: {fileID: 7252555132849349546}
   - component: {fileID: 1425513793395090083}
-  - component: {fileID: 6613745626584080635}
+  - component: {fileID: 2471675889829162676}
   m_Layer: 3
   m_Name: Spike
-  m_TagString: Untagged
+  m_TagString: Obstacles
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -299,8 +299,8 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2721280416290887638}
   m_Mesh: {fileID: 0}
---- !u!64 &6613745626584080635
-MeshCollider:
+--- !u!65 &2471675889829162676
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -309,7 +309,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

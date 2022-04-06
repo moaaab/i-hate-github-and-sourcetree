@@ -8,6 +8,7 @@ public class player : MonoBehaviour
     [SerializeField] public float playerFVelocity = 0.1f; //forward velocity
     [SerializeField] public bool playerGravityState = true; //true = gravity normal (falls down) - false = gravity flipped (falls up)
     [SerializeField] public float jumpForce = 15;
+    public AudioSource audioJump;
     public Rigidbody rb;
     //new Vector3
     // Start is called before the first frame update

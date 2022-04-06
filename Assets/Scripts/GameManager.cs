@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public Lives lives;
     public IsDead died;
     public Transform theCamera;
+    public AudioSource audioOne;
+    public AudioSource audioTwo;
+    public AudioSource audioThree;
 
     Vector3 startPos = new Vector3(2.5f, 2.4f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
@@ -90,5 +93,13 @@ public class GameManager : MonoBehaviour
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
         Time.timeScale = 1;
+        if (lives.nrOfLives == 2)
+        {
+            audioTwo.Play();
+        }
+        if (lives.nrOfLives == 1)
+        {
+            audioThree.Play();
+        }
     }
 }

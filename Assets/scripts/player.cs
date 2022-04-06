@@ -47,6 +47,10 @@ public class player : MonoBehaviour
             Debug.Log("space was pressed");
             rb.velocity = new Vector3(0, jumpForce, 0);
             playerGravityState = true;
+
+            GetComponent<Rigidbody>().AddTorque(transform.up * 0.2f);
+            GetComponent<Rigidbody>().AddTorque(transform.right * 0.2f);
+            GetComponent<Rigidbody>().AddTorque(transform.forward * 0.2f);
         }
         //reverse jump
         if (Input.GetKeyDown("down"))

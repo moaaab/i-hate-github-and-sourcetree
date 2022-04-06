@@ -7,6 +7,10 @@ public class Lives : MonoBehaviour
 {
     [SerializeField]
     TextMeshProUGUI livesLeft;
+    public AudioSource audioOne;
+    public AudioSource audioTwo;
+    public AudioSource audioThree;
+
 
     public int nrOfLives = 4;
 
@@ -14,5 +18,8 @@ public class Lives : MonoBehaviour
     {
         nrOfLives--;
         livesLeft.text = nrOfLives.ToString();
+        audioOne.Stop();
+        audioTwo.Stop();
+        audioThree.Stop();
     }
 }

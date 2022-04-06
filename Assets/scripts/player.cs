@@ -7,6 +7,8 @@ public class player : MonoBehaviour
     [SerializeField] public float playerGravity = 30;
     [SerializeField] public float playerFVelocity = 0.1f; //forward velocity
     [SerializeField] public bool playerGravityState = true; //true = gravity normal (falls down) - false = gravity flipped (falls up)
+    [SerializeField] public float jumpForce = 15;
+    public AudioSource audioJump;
     public Rigidbody rb;
     //new Vector3
     // Start is called before the first frame update
@@ -43,14 +45,14 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             Debug.Log("space was pressed");
-            rb.velocity = new Vector3(0, 20, 0);
+            rb.velocity = new Vector3(0, jumpForce, 0);
             playerGravityState = true;
         }
         //reverse jump
         if (Input.GetKeyDown("down"))
         {
             Debug.Log("down was pressed");
-            rb.velocity = new Vector3(0, -20, 0);
+            rb.velocity = new Vector3(0, -jumpForce, 0);
             playerGravityState = false;
         }
         //Automatic movement forward

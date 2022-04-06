@@ -6,6 +6,7 @@ public class Danger : MonoBehaviour
 {
     public Lives lives;
     public IsDead died;
+
     private void OnCollisionEnter(Collision collision)
     {
         lives.LoseLife();

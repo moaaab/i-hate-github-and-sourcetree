@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioOne;
     public AudioSource audioTwo;
     public AudioSource audioThree;
+    public Transform LoseCreditCanvas;
 
     Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
@@ -46,10 +48,11 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        if (died.died)
+        if (died.died && lives.nrOfLives > 0)
         {
-            Time.timeScale = 0;
-            Reset();
+            player.gameObject.SetActive(false);
+            LoseCreditCanvas.gameObject.SetActive(true);
+            StartCoroutine(LoseCredit());
         }
 
         else if (lives.nrOfLives < 1)
@@ -85,6 +88,14 @@ public class GameManager : MonoBehaviour
         DeathMenuCanvas.gameObject.SetActive(true);
         Time.timeScale = 0;
         died.died = false;
+    }
+
+    IEnumerator LoseCredit()
+    {
+        yield return new WaitForSeconds(1);
+        LoseCreditCanvas.gameObject.SetActive(false);
+        Reset();
+        player.gameObject.SetActive(true);
     }
 
 

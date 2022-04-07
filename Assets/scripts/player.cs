@@ -10,7 +10,7 @@ public class player : MonoBehaviour
     [SerializeField] public float jumpForce = 15;
     public AudioSource audioJump;
     public Rigidbody rb;
-    //new Vector3
+
     // Start is called before the first frame update
     void Start()
     {

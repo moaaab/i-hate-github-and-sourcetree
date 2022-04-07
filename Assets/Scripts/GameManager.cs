@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioTwo;
     public AudioSource audioThree;
     public Transform LoseCreditCanvas;
+    public bool lostLife = true;
 
     Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
@@ -48,11 +49,12 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 1;
         }
 
-        if (died.died && lives.nrOfLives > 0)
+        if ((died.died && lives.nrOfLives > 0) && lostLife)
         {
             player.gameObject.SetActive(false);
             LoseCreditCanvas.gameObject.SetActive(true);
             StartCoroutine(LoseCredit());
+            lostLife = false;
         }
 
         else if (lives.nrOfLives < 1)
@@ -115,6 +117,7 @@ public class GameManager : MonoBehaviour
             audioThree.Play();
         }
         died.died = false;
+        lostLife = true;
     }
 
     public void GoToMenu()

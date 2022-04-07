@@ -143,10 +143,4 @@ public class GameManager : MonoBehaviour
             countDownText.text = i.ToString();
         }
     }
-
-    IEnumerator ResetCounter(int i)
-    {
-        yield return new WaitForSeconds(5);
-        i = 3;
-    }
 }

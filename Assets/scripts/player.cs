@@ -10,7 +10,11 @@ public class player : MonoBehaviour
     [SerializeField] public float jumpForce = 15;
     public AudioSource audioJump;
     public Rigidbody rb;
-
+    //terminal velocity fix?
+    [SerializeField] float maxAcceleration = 30;
+    [SerializeField] float terminalVelocity = 15;
+    float idealDrag = 30 / 15;
+    //new Vector3
     // Start is called before the first frame update
     void Start()
     {
@@ -52,13 +56,15 @@ public class player : MonoBehaviour
             GetComponent<Rigidbody>().AddTorque(transform.right * 0.2f);
             GetComponent<Rigidbody>().AddTorque(transform.forward * 0.2f);
         }
-        //reverse jump
+        //reverse gravity jump
         if (Input.GetKeyDown("down"))
         {
             Debug.Log("down was pressed");
             rb.velocity = new Vector3(0, -jumpForce, 0);
             playerGravityState = false;
         }
+        rb.drag = idealDrag / (idealDrag * Time.fixedDeltaTime + 1);
+
         //Automatic movement forward
         gameObject.transform.position += Vector3.forward * Time.deltaTime * playerFVelocity;
     }

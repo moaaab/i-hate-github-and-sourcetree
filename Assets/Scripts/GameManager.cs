@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioThree;
     public Transform LoseCreditCanvas;
     public bool lostLife = true;
-    private int countDownNumber = 3;
+    public int countDownNumber = 3;
     public TextMeshProUGUI countDownText;
 
     Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
             StartCoroutine(CountDown(countDownNumber));
             StartCoroutine(LoseCredit());
             lostLife = false;
-            countDownNumber = 3;
         }
 
         else if (lives.nrOfLives < 1)
@@ -132,12 +131,22 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CountDown(int i)
     {
-        yield return new WaitForSeconds(1);
-        i--;
+        yield return new WaitForSeconds(0.75f);
         countDownText.text = i.ToString();
-        if (i > 0)
+        i--;
+        if (i >= 0)
         {
             StartCoroutine(CountDown(i));
+        } else
+        {
+            i = 3;
+            countDownText.text = i.ToString();
         }
+    }
+
+    IEnumerator ResetCounter(int i)
+    {
+        yield return new WaitForSeconds(5);
+        i = 3;
     }
 }

@@ -87,6 +87,10 @@ public class GameManager : MonoBehaviour
                  StartCoroutine(Pause());
                  died.died = false;
              }*/
+            if (Input.GetKeyDown("return"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 
@@ -100,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoseCredit()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         LoseCreditCanvas.gameObject.SetActive(false);
         Reset();
         player.gameObject.SetActive(true);
@@ -134,7 +138,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator CountDown(int i)
     {
-        yield return new WaitForSeconds(0.75f);
+        yield return new WaitForSeconds(0.5f);
         countDownText.text = i.ToString();
         i--;
         if (i >= 0)

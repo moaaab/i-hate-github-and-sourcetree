@@ -11,6 +11,7 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public IsDead died;
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI highScoreTextGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class Score : MonoBehaviour
         {
             highScore = meterScore;
             highScoreText.text = highScore.ToString();
+            highScoreTextGameOver.text = highScore.ToString();
         }
     }
 }

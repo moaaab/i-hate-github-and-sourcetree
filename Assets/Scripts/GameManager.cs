@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     private float deathMenuAppearTime = 0f;
 
+    public player PlayerScript;
+
     //public Transform player;
     public Transform DeathMenuCanvas;
     public Transform player;
@@ -122,6 +124,7 @@ public class GameManager : MonoBehaviour
         }
         died.died = false;
         lostLife = true;
+        PlayerScript.playerGravityState = true;
     }
 
     public void GoToMenu()

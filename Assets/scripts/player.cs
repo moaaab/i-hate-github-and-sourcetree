@@ -49,8 +49,14 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown("space"))
         {
             Debug.Log("space was pressed");
-            rb.velocity = new Vector3(0, jumpForce, 0);
-            playerGravityState = true;
+            if (playerGravityState == true)
+            {
+                rb.velocity = new Vector3(0, jumpForce, 0);
+            }
+            if (playerGravityState == false)
+            {
+                rb.velocity = new Vector3(0, -jumpForce, 0);
+            }
 
             GetComponent<Rigidbody>().AddTorque(transform.up * 0.2f);
             GetComponent<Rigidbody>().AddTorque(transform.right * 0.2f);
@@ -60,8 +66,17 @@ public class player : MonoBehaviour
         if (Input.GetKeyDown("down"))
         {
             Debug.Log("down was pressed");
-            rb.velocity = new Vector3(0, -jumpForce, 0);
-            playerGravityState = false;
+            //rb.velocity = new Vector3(0, -jumpForce, 0);
+            if (playerGravityState == true)
+            {
+                rb.velocity = new Vector3(0, -jumpForce, 0);
+                playerGravityState = false;
+            }
+            else if (playerGravityState == false)
+            {
+                rb.velocity = new Vector3(0, jumpForce, 0);
+                playerGravityState = true;
+            }
         }
         rb.drag = idealDrag / (idealDrag * Time.fixedDeltaTime + 1);
 

@@ -11,6 +11,7 @@ public class Score : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public IsDead died;
     public TextMeshProUGUI highScoreText;
+    public TextMeshProUGUI highScoreTextGameOver;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +22,14 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        meterScore = (int) player.transform.position.z;
+        meterScore = ((int) player.transform.position.z) * 10 + 10;
         scoreText.text = meterScore.ToString();
 
         if (died.died && highScore < meterScore)
         {
             highScore = meterScore;
             highScoreText.text = highScore.ToString();
+            highScoreTextGameOver.text = highScore.ToString();
         }
     }
 }

@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public AudioSource audioThree;
     public Transform LoseCreditCanvas;
     public bool lostLife = true;
+    public int countDownNumber = 3;
+    public TextMeshProUGUI countDownText;
 
     Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         Time.timeScale = 0;
+        countDownText.text = countDownNumber.ToString();
     }
 
     private void Update()
@@ -53,6 +56,7 @@ public class GameManager : MonoBehaviour
         {
             player.gameObject.SetActive(false);
             LoseCreditCanvas.gameObject.SetActive(true);
+            StartCoroutine(CountDown(countDownNumber));
             StartCoroutine(LoseCredit());
             lostLife = false;
         }
@@ -94,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoseCredit()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(3);
         LoseCreditCanvas.gameObject.SetActive(false);
         Reset();
         player.gameObject.SetActive(true);
@@ -123,5 +127,20 @@ public class GameManager : MonoBehaviour
     public void GoToMenu()
     {
         SceneManager.LoadScene(0);
+    }
+
+    IEnumerator CountDown(int i)
+    {
+        yield return new WaitForSeconds(0.75f);
+        countDownText.text = i.ToString();
+        i--;
+        if (i >= 0)
+        {
+            StartCoroutine(CountDown(i));
+        } else
+        {
+            i = 3;
+            countDownText.text = i.ToString();
+        }
     }
 }

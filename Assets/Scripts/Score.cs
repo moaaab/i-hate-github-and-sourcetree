@@ -20,7 +20,7 @@ public class Score : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         meterScore = ((int) player.transform.position.z) * 10 + 10;
         scoreText.text = meterScore.ToString();

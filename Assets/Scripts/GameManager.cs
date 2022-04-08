@@ -9,10 +9,12 @@ public class GameManager : MonoBehaviour
     private float deathMenuAppearTime = 0f;
 
     public player PlayerScript;
-
+    public Transform player;
+    public ParticleSystem deathEffect;
     //public Transform player;
     public Transform DeathMenuCanvas;
-    public Transform player;
+
+    public Transform sun;
     public Lives lives;
     public IsDead died;
     public Transform theCamera;
@@ -56,6 +58,7 @@ public class GameManager : MonoBehaviour
 
         if ((died.died && lives.nrOfLives > 0) && lostLife)
         {
+            Instantiate(deathEffect, player.position, Quaternion.identity);
             player.gameObject.SetActive(false);
             LoseCreditCanvas.gameObject.SetActive(true);
             StartCoroutine(CountDown(countDownNumber, 0.3f));
@@ -98,7 +101,8 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(deathMenuAppearTime);
         DeathMenuCanvas.gameObject.SetActive(true);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
+        player.gameObject.SetActive(false);
         died.died = false;
     }
 
@@ -118,6 +122,7 @@ public class GameManager : MonoBehaviour
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
         background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
+        sun.transform.position = new Vector3(153.71f, 8.56f, 0f);
         if (lives.nrOfLives == 2)
         {
             audioTwo.Play();

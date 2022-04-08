@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        meterScore = ((int) player.transform.position.z) * 10 + 10;
+        meterScore = ((int) player.transform.position.z) * 10 + 180;
         scoreText.text = meterScore.ToString();
 
         if (died.died && highScore < meterScore)

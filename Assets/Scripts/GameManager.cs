@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
     Vector3 checkpoint2 = new Vector3(0.5f, -0.05f, 461.2f);
     Vector3 cameraCheckPoint2 = new Vector3(9.89f, 0.85f, 464.86f);
 
-    Vector3 startPos = new Vector3(0.5f, 0.85f, -1.05f);
+    Vector3 startPos = new Vector3(0.5f, 2.4f, -18.46f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
 
     Vector3 playerVelocity = new Vector3(0, 0, 0);

@@ -36,6 +36,12 @@ public class GameManager : MonoBehaviour
     Vector3 checkpoint2 = new Vector3(0.5f, -0.05f, 461.2f);
     Vector3 cameraCheckPoint2 = new Vector3(9.89f, 0.85f, 464.86f);
 
+    Vector3 checkpoint3 = new Vector3(0.5f, -0.05f, 747.4399f);
+    Vector3 cameraCheckPoint3 = new Vector3(9.89f, 0.85f, 751.0999f);
+
+    Vector3 checkpoint4 = new Vector3(0.5f, -0.34f, 985.89f);
+    Vector3 cameraCheckPoint4 = new Vector3(9.89f, 0.85f, 989.55f);
+
     Vector3 startPos = new Vector3(0.5f, 2.4f, -18.46f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, -14.8f);
 
@@ -170,6 +176,19 @@ public class GameManager : MonoBehaviour
         {
             player.transform.position = checkpoint2;
             theCamera.transform.position = cameraCheckPoint2;
+
+        }
+        if (checkpoint.checkPoint == 3)
+        {
+            player.transform.position = checkpoint3;
+            theCamera.transform.position = cameraCheckPoint3;
+
+        }
+
+        if (checkpoint.checkPoint == 4)
+        {
+            player.transform.position = checkpoint4;
+            theCamera.transform.position = cameraCheckPoint4;
 
         }
         DeathMenuCanvas.gameObject.SetActive(false);

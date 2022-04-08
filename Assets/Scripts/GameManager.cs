@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         {
             player.gameObject.SetActive(false);
             LoseCreditCanvas.gameObject.SetActive(true);
-            StartCoroutine(CountDown(countDownNumber));
+            StartCoroutine(CountDown(countDownNumber, 0.3f));
             StartCoroutine(LoseCredit());
             lostLife = false;
         }
@@ -104,7 +104,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator LoseCredit()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(3);
         LoseCreditCanvas.gameObject.SetActive(false);
         Reset();
         player.gameObject.SetActive(true);
@@ -136,14 +136,18 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    IEnumerator CountDown(int i)
+    IEnumerator CountDown(int i, float j)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(j);
         countDownText.text = i.ToString();
         i--;
+        if (j < 1)
+        {
+            j = j + 0.7f;
+        }
         if (i >= 0)
         {
-            StartCoroutine(CountDown(i));
+            StartCoroutine(CountDown(i, j));
         } else
         {
             i = 3;

@@ -165,8 +165,6 @@ public class GameManager : MonoBehaviour
         }
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
-        background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
-        sun.transform.position = new Vector3(-17.39001f, -0.3399992f, 2.5f);
         
         Time.timeScale = 0;
         musicPlayed = true;

@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(deathMenuAppearTime);
         DeathMenuCanvas.gameObject.SetActive(true);
+        Instantiate(deathEffect, player.position, Quaternion.identity);
         //Time.timeScale = 0;
         player.gameObject.SetActive(false);
         died.died = false;
@@ -122,7 +123,7 @@ public class GameManager : MonoBehaviour
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
         background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
-        sun.transform.position = new Vector3(153.71f, 8.56f, 0f);
+        sun.transform.position = new Vector3(-17.39001f, -0.3399992f, 2.5f);
         if (lives.nrOfLives == 2)
         {
             audioTwo.Play();
@@ -131,6 +132,7 @@ public class GameManager : MonoBehaviour
         {
             audioThree.Play();
         }
+        Time.timeScale = 0;
         died.died = false;
         lostLife = true;
         PlayerScript.playerGravityState = true;

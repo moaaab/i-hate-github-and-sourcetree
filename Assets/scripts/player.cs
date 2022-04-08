@@ -58,9 +58,9 @@ public class player : MonoBehaviour
                 rb.velocity = new Vector3(0, -jumpForce, 0);
             }
 
-            GetComponent<Rigidbody>().AddTorque(transform.up * 0.2f);
-            GetComponent<Rigidbody>().AddTorque(transform.right * 0.2f);
-            GetComponent<Rigidbody>().AddTorque(transform.forward * 0.2f);
+            GetComponent<Rigidbody>().AddTorque(transform.up * 0.1f);
+            GetComponent<Rigidbody>().AddTorque(transform.right * 0.4f);
+            GetComponent<Rigidbody>().AddTorque(transform.forward * 0.1f);
         }
         //reverse gravity jump
         if (Input.GetKeyDown("down"))

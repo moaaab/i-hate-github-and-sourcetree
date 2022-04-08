@@ -30,12 +30,12 @@ public class GameManager : MonoBehaviour
     public CheckPointCounter checkpoint;
 
     Vector3 checkpoint1 = new Vector3(0.5f, 2.7f, 253.44f);
-    Vector3 cameraCheckpoint1 = new Vector3(9.89f, 1.14f, 253.44f);
+    Vector3 cameraCheckpoint1 = new Vector3(9.89f, 0.85f, 257.1f);
 
-    Vector3 checkpoint2 = new Vector3(0.5f, 2.12f, 457.99f);
-    Vector3 cameraCheckPoint2 = new Vector3(9.89f, 0.56f, 457.99f);
+    Vector3 checkpoint2 = new Vector3(0.5f, -0.05f, 461.2f);
+    Vector3 cameraCheckPoint2 = new Vector3(9.89f, 0.85f, 464.86f);
 
-    Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
+    Vector3 startPos = new Vector3(0.5f, 0.85f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
 
     Vector3 playerVelocity = new Vector3(0, 0, 0);

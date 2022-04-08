@@ -58,6 +58,11 @@ public class GameManager : MonoBehaviour
 
     Vector3 checkpoint2 = new Vector3(0, 1, 20);*/
 
+    private void Awake()
+    {
+        player.transform.position = startPos;
+    }
+
     private void Start()
     {
         Time.timeScale = 0;
@@ -89,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         if ((died.died && lives.nrOfLives > 0) && lostLife)
         {
-            Instantiate(deathEffect, player.position, Quaternion.identity);
+            Instantiate(deathEffect, player.position, Quaternion.Euler(0, 90, 45));
             player.gameObject.SetActive(false);
             LoseCreditCanvas.gameObject.SetActive(true);
             StartCoroutine(CountDown(countDownNumber, 0.3f));
@@ -99,7 +104,9 @@ public class GameManager : MonoBehaviour
 
         else if (lives.nrOfLives < 1)
         {
-            StartCoroutine(DeathMenu());
+
+            if (died.died) StartCoroutine(DeathMenu());
+
             /* if (checkpoint.checkPoint == 0)
              {
                  player.transform.position = checkpoint0;
@@ -130,11 +137,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator DeathMenu()
     {
+        
         yield return new WaitForSeconds(deathMenuAppearTime);
         DeathMenuCanvas.gameObject.SetActive(true);
         Instantiate(deathEffect, player.position, Quaternion.identity);
         //Time.timeScale = 0;
         player.gameObject.SetActive(false);
+        
         died.died = false;
     }
 

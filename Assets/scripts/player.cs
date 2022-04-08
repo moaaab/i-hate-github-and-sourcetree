@@ -14,6 +14,7 @@ public class player : MonoBehaviour
     [SerializeField] float maxAcceleration = 30;
     [SerializeField] float terminalVelocity = 15;
     float idealDrag = 30 / 15;
+    public ParticleSystem particleGravity;
     //new Vector3
     // Start is called before the first frame update
     void Start()
@@ -69,11 +70,13 @@ public class player : MonoBehaviour
             //rb.velocity = new Vector3(0, -jumpForce, 0);
             if (playerGravityState == true)
             {
+                //Instantiate(particleGravity, transform.position, Quaternion.Euler(-90, 0, 0));
                 rb.velocity = new Vector3(0, -jumpForce, 0);
                 playerGravityState = false;
             }
             else if (playerGravityState == false)
             {
+                //Instantiate(particleGravity, transform.position, Quaternion.Euler(90, 0, 0));
                 rb.velocity = new Vector3(0, jumpForce, 0);
                 playerGravityState = true;
             }

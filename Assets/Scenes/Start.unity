@@ -4880,6 +4880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822f92fd3f04bfb4dafceced5929cfff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  blinkText: PRESS ENTER TO START
   blinkingText: {fileID: 1502978833}
 --- !u!1 &1510959009
 GameObject:

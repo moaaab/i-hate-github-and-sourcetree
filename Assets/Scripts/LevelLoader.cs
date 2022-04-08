@@ -22,6 +22,7 @@ public class LevelLoader : MonoBehaviour
     IEnumerator LoadLevel(int levelIndex)
     {
         yield return new WaitForSeconds(transitionTime);
+        Time.timeScale = 0;
         SceneManager.LoadScene(levelIndex);
     }
 

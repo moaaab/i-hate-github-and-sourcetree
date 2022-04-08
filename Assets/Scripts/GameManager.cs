@@ -27,6 +27,14 @@ public class GameManager : MonoBehaviour
     public int countDownNumber = 3;
     public TextMeshProUGUI countDownText;
 
+    public CheckPointCounter checkpoint;
+
+    Vector3 checkpoint1 = new Vector3(0.5f, 2.7f, 253.44f);
+    Vector3 cameraCheckpoint1 = new Vector3(9.89f, 1.14f, 253.44f);
+
+    Vector3 checkpoint2 = new Vector3(0.5f, 2.12f, 457.99f);
+    Vector3 cameraCheckPoint2 = new Vector3(9.89f, 0.56f, 457.99f);
+
     Vector3 startPos = new Vector3(0.5f, 2.41f, -1.05f);
     Vector3 cameraStartPos = new Vector3(9.89f, 0.85f, 2.9f);
 
@@ -118,8 +126,26 @@ public class GameManager : MonoBehaviour
 
     public void Reset()
     {
-        player.transform.position = startPos;
-        theCamera.transform.position = cameraStartPos;
+        if (checkpoint.checkPoint == 0)
+        {
+            player.transform.position = startPos;
+            theCamera.transform.position = cameraStartPos;
+            died.died = false;
+        }
+
+        if (checkpoint.checkPoint == 1)
+        {
+            player.transform.position = checkpoint1;
+            theCamera.transform.position = cameraCheckpoint1;
+            died.died = false;
+        }
+
+        if (checkpoint.checkPoint == 2)
+        {
+            player.transform.position = checkpoint2;
+            theCamera.transform.position = cameraCheckPoint2;
+
+        }
         DeathMenuCanvas.gameObject.SetActive(false);
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
         background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);

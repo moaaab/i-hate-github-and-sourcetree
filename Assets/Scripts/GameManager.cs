@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
              }*/
             if (Input.GetKeyDown("return"))
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(0);
             }
         }
     }

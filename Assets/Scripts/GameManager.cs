@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     public bool lostLife = true;
     public int countDownNumber = 3;
     public TextMeshProUGUI countDownText;
+    public bool musicPlayed = true;
 
     public CheckPointCounter checkpoint;
 
@@ -61,6 +62,22 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && !died.died)
         {
+            if (musicPlayed)
+            {
+                if (lives.nrOfLives == 3)
+                {
+                    audioOne.Play();
+                }
+                if (lives.nrOfLives == 2)
+                {
+                    audioTwo.Play();
+                }
+                if (lives.nrOfLives == 1)
+                {
+                    audioThree.Play();
+                }
+            }
+            musicPlayed = false;
             Time.timeScale = 1;
         }
 
@@ -150,15 +167,9 @@ public class GameManager : MonoBehaviour
         player.GetComponent<Rigidbody>().velocity = playerVelocity;
         background.transform.position = new Vector3(-171.1f, -8.9f, 2.5f);
         sun.transform.position = new Vector3(-17.39001f, -0.3399992f, 2.5f);
-        if (lives.nrOfLives == 2)
-        {
-            audioTwo.Play();
-        }
-        if (lives.nrOfLives == 1)
-        {
-            audioThree.Play();
-        }
+        
         Time.timeScale = 0;
+        musicPlayed = true;
         died.died = false;
         lostLife = true;
         PlayerScript.playerGravityState = true;

@@ -131,6 +131,8 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown("return"))
             {
                 SceneManager.LoadScene(0);
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
             }
         }
     }

@@ -12,6 +12,8 @@ public class LevelLoader : MonoBehaviour
     public void StartGame()
     {
         StartCoroutine(LoadLevel(1));
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void QuitGame()

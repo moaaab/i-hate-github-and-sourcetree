@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public AudioSource audioTwo;
     public AudioSource audioThree;
     public Transform LoseCreditCanvas;
+    public Transform spaceCanvas;
     public bool lostLife = true;
     public int countDownNumber = 3;
     public TextMeshProUGUI countDownText;
@@ -73,6 +74,8 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown("space") && !died.died)
         {
+            spaceCanvas.gameObject.SetActive(false);
+
             if (musicPlayed)
             {
                 if (lives.nrOfLives == 3)
@@ -155,6 +158,7 @@ public class GameManager : MonoBehaviour
         LoseCreditCanvas.gameObject.SetActive(false);
         Reset();
         player.gameObject.SetActive(true);
+        spaceCanvas.gameObject.SetActive(true);
     }
 
 

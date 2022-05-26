@@ -49,7 +49,6 @@ public class player : MonoBehaviour
         //jump
         if (Input.GetKeyDown("space"))
         {
-            Debug.Log("space was pressed");
             if (playerGravityState == true)
             {
                 rb.velocity = new Vector3(0, jumpForce, 0);

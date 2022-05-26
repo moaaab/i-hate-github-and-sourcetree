@@ -16,14 +16,14 @@ public class Blink : MonoBehaviour
 
     IEnumerator ObjectAppear(TextMeshProUGUI theText, string blinkText)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         theText.text = blinkText;
         StartCoroutine(ObjectDisappear(theText, blinkText));
     }
 
     IEnumerator ObjectDisappear(TextMeshProUGUI theText, string blinkText)
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         theText.text = "";
         StartCoroutine(ObjectAppear(theText, blinkText));
     }

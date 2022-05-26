@@ -9,11 +9,14 @@ public class LevelLoader : MonoBehaviour
     public float transitionTime = 0f;
     public Transform DeathMenuCanvas;
 
+    public void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
     public void StartGame()
     {
         StartCoroutine(LoadLevel(1));
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
     public void QuitGame()
